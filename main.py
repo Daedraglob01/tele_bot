@@ -16,7 +16,8 @@ def get_weather(message):
     res = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API}&units=metric')
     if res.status_code == 200:
         data = json.loads(res.text)
-        bot.reply_to(message, f'Зараз погода {data['main']['temp']} градусів цельсія')
+        bot.reply_to(message, f'Зараз погода {data["main"]["temp"]} градусів цельсія')
+
     else:
         bot.reply_to(message, 'Неправильно вказане місто')
 
